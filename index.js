@@ -41,6 +41,10 @@ function processmd (options, callback) {
   markdownIt.use(require('markdown-it-cjk-breaks'))
   markdownIt.use(require('markdown-it-deflist'))
   markdownIt.use(require('markdown-it-footnote'))
+  markdownIt.use(require('markdown-it-link-attributes'), {
+    pattern: /^https?:/,
+    attrs: { target: '_blank', rel: 'noopener noreferrer' }
+  })
 
   options.markdownRenderer = options.markdownRenderer || function mdRender (str) { return markdownIt.render(str) }
 
