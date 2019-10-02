@@ -39,6 +39,7 @@ function processmd (options, callback) {
   }
 
   markdownIt.use(require('markdown-it-cjk-breaks'))
+  markdownIt.use(require('markdown-it-deflist'))
 
   options.markdownRenderer = options.markdownRenderer || function mdRender (str) { return markdownIt.render(str) }
 
