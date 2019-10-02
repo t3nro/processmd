@@ -38,6 +38,7 @@ function processmd (options, callback) {
     markdownIt.use(require('markdown-it-named-headings'))
   }
 
+  markdownIt.use(require('markdown-it-attrs'))
   markdownIt.use(require('markdown-it-cjk-breaks'))
   markdownIt.use(require('markdown-it-deflist'))
   markdownIt.use(require('markdown-it-footnote'))
