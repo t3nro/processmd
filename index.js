@@ -4,7 +4,6 @@ const fs = require('fs')
 const path = require('path')
 const globby = require('globby')
 const MarkdownIt = require('markdown-it')
-const markdownItHighlight = require('markdown-it-highlight').default
 const yaml = require('js-yaml')
 const mkdirp = require('mkdirp')
 const removeMd = require('remove-markdown')
@@ -26,9 +25,6 @@ function processmd (options, callback) {
 
   const markdownIt = MarkdownIt(options.markdownOptions)
 
-  if (options.highlightCode) {
-    markdownIt.use(markdownItHighlight)
-  }
   if (options.headingIds) {
     markdownIt.use(require('markdown-it-named-headings'))
   }
